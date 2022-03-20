@@ -3,6 +3,24 @@ const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
 
+// swaggerUI
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
+
+// Conexión base de datos
+const mongoose = require('mongoose');
+
+const uri = 'mongodb://localhost:27017/edge-test';
+const options = {useNewUrlParser: true, useUnifiedTopology: true};
+
+// Or using promises
+mongoose.connect(uri, options).then(
+  /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
+  () => { console.log('Conectado a DB') },
+  /** handle initial connection error */
+  err => { console.log(err) }
+);
+
 const app = express();
 
 // Middleware
@@ -15,6 +33,13 @@ app.use(express.urlencoded({ extended: true }));
 require('dotenv').config();
 
 // Rutas
+
+app.use(
+  '/api-docs',
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerDocument)
+);
+
 app.get('/',  (req, res) => {
   res.send('Hello World!');
 });
