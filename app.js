@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
 
+
 // swaggerUI
 const swaggerUi = require('swagger-ui-express'),
 swaggerDocument = require('./swagger.json');
@@ -10,7 +11,7 @@ swaggerDocument = require('./swagger.json');
 // Conexión base de datos
 const mongoose = require('mongoose');
 
-const uri = 'mongodb://localhost:27017/edge-test';
+const uri = 'mongodb+srv://afranval:th251131%24%24%24@cluster0.rc7qz.mongodb.net/edge-test';
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 
 // Or using promises
@@ -32,16 +33,23 @@ app.use(express.urlencoded({ extended: true }));
 
 require('dotenv').config();
 
-// Rutas
-
+/**
+ * Swagger route
+ */
 app.use(
   '/api-docs',
   swaggerUi.serve, 
   swaggerUi.setup(swaggerDocument)
 );
+/**
+ * Api route
+ */
+app.use('/api', require('./routes/note'));
+app.use('/api', require('./routes/users'));
+app.use('/api', require('./routes/login'));
 
 app.get('/',  (req, res) => {
-  res.send('Hello World!');
+  res.send('Getting /api/ -->');
 });
 
 // Middleware para Vue.js router modo history
