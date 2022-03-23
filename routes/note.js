@@ -5,7 +5,7 @@ const router = express.Router();
 import Note from '../models/note';
 
 // middlewares
-const {AuthCheck} = require('../middlewares/autenticacion.js');
+const {AuthCheck} = require('../middlewares/authentication.js');
 
 // Agregar una nota
 router.post('/note', AuthCheck, async(req, res) => {
