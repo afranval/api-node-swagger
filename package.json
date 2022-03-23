@@ -1,6 +1,6 @@
 {
   "name": "edge-test-mevn",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Edge Test",
   "main": "index.js",
   "scripts": {
