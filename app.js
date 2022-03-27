@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
-
+require('dotenv').config();
 
 // swaggerUI
 const swaggerUi = require('swagger-ui-express'),
@@ -11,7 +11,7 @@ swaggerDocument = require('./swagger.json');
 // Conexión base de datos
 const mongoose = require('mongoose');
 
-const uri = 'mongodb+srv://afranval:th251131%24%24%24@cluster0.rc7qz.mongodb.net/edge-test';
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.rc7qz.mongodb.net/${process.env.DB_NAME}`;
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 
 // Or using promises
