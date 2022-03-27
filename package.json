@@ -1,7 +1,7 @@
 {
   "name": "edge-test-mevn",
   "version": "1.2.4",
-  "description": "Edge Test",
+  "description": "API with NodeJS",
   "main": "index.js",
   "scripts": {
     "start": "babel-node app.js --exec",
