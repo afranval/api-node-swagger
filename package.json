@@ -1,6 +1,6 @@
 {
   "name": "api-node-swagger",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "description": "API with NodeJS",
   "main": "index.js",
   "scripts": {
