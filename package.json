@@ -1,6 +1,6 @@
 {
   "name": "edge-test-mevn",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "API with NodeJS",
   "main": "index.js",
   "scripts": {
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afranval/edge-test-mevn.git"
+    "url": "git+https://github.com/afranval/api-node-swagger.git"
   },
   "keywords": [],
   "author": "Abel Franco <abelmatiasf@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/afranval/edge-test-mevn/issues"
+    "url": "https://github.com/afranval/api-node-swagger/issues"
   },
-  "homepage": "https://github.com/afranval/edge-test-mevn#readme",
+  "homepage": "https://github.com/afranval/api-node-swagger#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-history-api-fallback": "^1.6.0",

@@ -25,9 +25,16 @@ router.post('/notes', AuthCheck, async(req, res) => {
 router.get('/notes/:id', AuthCheck, async(req, res) => {
   const _id = req.params.id;
   try {
-    const noteDB = await Note.findOne({_id});
-    res.json(noteDB);
-  } catch (error) {
+    Note.findOne({_id})
+      .then( (record) => {
+        return res.json(record);
+      })
+      .catch( (err) => {
+        return res.status(404).json({
+          response: 'Entity not found',
+        })        
+      });
+  } catch (error) {    
     return res.status(500).json({
       response: 'An error occurred',
       error
@@ -70,14 +77,15 @@ router.put('/notes/:id', AuthCheck, async(req, res) => {
 router.delete('/notes/:id', AuthCheck, async(req, res) => {
   const _id = req.params.id;
   try {
-    const noteDb = await Note.findByIdAndDelete({_id});
-    if(!noteDb){
+    Note.findByIdAndDelete({_id})
+    .then( (record) => {
+      return res.json('Deleted successfully')
+    })
+    .catch( (err) => {
       return res.status(404).json({
         response: 'Entity not found',
-        error
-      })
-    }
-    res.json('Deleted successfully');
+      })        
+    });    
   } catch (error) {
     return res.status(500).json({
       response: 'An error occurred',
