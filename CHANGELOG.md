@@ -4,15 +4,21 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+## [1.5.12] - 2022-03-28
 
-## [1.4.11] - 2022-03-27
-## Modified
+### Added
+- Postman collection
+### Modified
+- Updated README.md
+
+## [1.4.11] - 2022-03-28
+### Modified
 - Updated README.md
 - Deleted accept allow route
 ## [1.4.10] - 2022-03-27
 ### Added
 - User add in swagger API
-## Modified
+### Modified
 - Updated README.md
 
 ## [1.3.10] - 2022-03-27

@@ -8,7 +8,7 @@
 ## Dependencies
 - NPM install dependencies
 ```
-    npm i
+npm i
 ```
 
 ## Enviroment vars config
@@ -33,3 +33,6 @@ npm run dev
 ```
 npm run devbabel
 ```
+
+## For use Postman collection
+- [Postman collection](public/apiWithNode.postman_collection.json)
