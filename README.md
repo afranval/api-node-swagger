@@ -14,22 +14,22 @@
 ## Enviroment vars config
 - Create .env file and added next vars
 ```
-    PORT=port
-    DB_USER=user_mongocloud
-    DB_PASS=pass_mongocloud
-    DB_NAME=db_mongocloud
+PORT=port
+DB_USER=user_mongocloud
+DB_PASS=pass_mongocloud
+DB_NAME=db_mongocloud
 ```
 
 ## Commads for run app
 - start with babel
 ```
-  npm run start
+npm run start
 ```
 - dev
 ```
-  npm run dev
+npm run dev
 ```
 - dev babel
 ```
-  npm run devbabel
+npm run devbabel
 ```
