@@ -30,7 +30,7 @@ router.post('/user', AuthCheck, async (req, res) => {
     
   } catch (error) {
     return res.status(500).json({
-      mensaje: 'Ocurrio un error',
+      response: 'An error occurred',
       error
     });
   }
@@ -54,8 +54,8 @@ router.put('/user/:id', AuthCheck, async(req, res) => {
     return res.json(usuarioDB);
 
   } catch (error) {
-    return res.status(400).json({
-      mensaje: 'Ocurrio un error',
+    return res.status(500).json({
+      response: 'An error occurred',
       error
     })
   }
@@ -73,15 +73,15 @@ router.delete('/user/:id', AuthCheck, async(req, res) => {
 
     if(!usuarioDelete){
       return res.status(400).json({
-        mensaje: 'Usuario no encontrado'
+        response: 'User not found'
       })
     }
 
     return res.json(usuarioDelete);
     
   } catch (error) {
-    return res.status(400).json({
-      mensaje: 'Ocurrio un error',
+    return res.status(500).json({
+      response: 'An error occurred',
       error
     })
   }
