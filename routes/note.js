@@ -8,28 +8,28 @@ import Note from '../models/note';
 const {AuthCheck} = require('../middlewares/authentication.js');
 
 // Agregar una nota
-router.post('/note', AuthCheck, async(req, res) => {
+router.post('/notes', AuthCheck, async(req, res) => {
   const body = req.body;  
   try {
     const noteDB = await Note.create(body);
     res.status(200).json(noteDB); 
   } catch (error) {
     return res.status(500).json({
-      mensaje: 'Ocurrio un error',
+      response: 'An error occurred',
       error
     })
   }
 });
 
 // Get con parámetros
-router.get('/note/:id', AuthCheck, async(req, res) => {
+router.get('/notes/:id', AuthCheck, async(req, res) => {
   const _id = req.params.id;
   try {
     const noteDB = await Note.findOne({_id});
     res.json(noteDB);
   } catch (error) {
-    return res.status(400).json({
-      mensaje: 'Ocurrio un error',
+    return res.status(500).json({
+      response: 'An error occurred',
       error
     })
   }
@@ -41,15 +41,15 @@ router.get('/notes', AuthCheck, async(req, res) => {
     const noteDb = await Note.find();
     res.json(noteDb);
   } catch (error) {
-    return res.status(400).json({
-      mensaje: 'Ocurrio un error',
+    return res.status(500).json({
+      response: 'An error occurred',
       error
     })
   }
 });
 
 // Put actualizar una nota
-router.put('/note/:id', AuthCheck, async(req, res) => {
+router.put('/notes/:id', AuthCheck, async(req, res) => {
   const _id = req.params.id;
   const body = req.body;
   try {
@@ -59,28 +59,28 @@ router.put('/note/:id', AuthCheck, async(req, res) => {
       {new: true});
     res.json(noteDb);  
   } catch (error) {
-    return res.status(400).json({
-      mensaje: 'Ocurrio un error',
+    return res.status(500).json({
+      response: 'An error occurred',
       error
     })
   }
 });
 
 // Delete eliminar una nota
-router.delete('/note/:id', AuthCheck, async(req, res) => {
+router.delete('/notes/:id', AuthCheck, async(req, res) => {
   const _id = req.params.id;
   try {
     const noteDb = await Note.findByIdAndDelete({_id});
     if(!noteDb){
-      return res.status(400).json({
-        mensaje: 'No se encontró el id indicado',
+      return res.status(404).json({
+        response: 'Entity not found',
         error
       })
     }
-    res.json(noteDb);  
+    res.json('Deleted successfully');
   } catch (error) {
-    return res.status(400).json({
-      mensaje: 'Ocurrio un error',
+    return res.status(500).json({
+      response: 'An error occurred',
       error
     })
   }

@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-## [1.2.4] - 2022-03-26
+## [1.3.4] - 2022-03-27
+### Added
+- Added manage API with swagger and config it.
 ### Modified
-- Modified connect MongoDB environment variable
+- API reponses translate to EN
+- Updated README.md
 ## [1.2.3] - 2022-03-23
 ### Modified
 - Modified add user method post with AuthCheck middleware

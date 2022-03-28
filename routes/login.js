@@ -14,15 +14,15 @@ router.post('/login', async(req, res) => {
 
     // Evaluamos si existe el usuario en DB
     if(!usuarioDB){
-      return res.status(400).json({
-        mensaje: 'Usuario! o contraseña inválidos',
+      return res.status(401).json({
+        response: 'User or password wrong!',
       });
     }
 
     // Evaluamos la contraseña correcta
     if( !bcrypt.compareSync(body.pass, usuarioDB.pass) ){
-      return res.status(400).json({
-        mensaje: 'Usuario o contraseña! inválidos',
+      return res.status(401).json({
+        response: 'User or password wrong!',
       });
     }
 
@@ -33,13 +33,12 @@ router.post('/login', async(req, res) => {
 
     // Pasó las validaciones
     return res.json({
-      usuarioDB,
       token: token
     })
     
   } catch (error) {
-    return res.status(400).json({
-      mensaje: 'Ocurrio un error',
+    return res.status(500).json({
+      response: 'An error occurred',
       error
     });
   }
@@ -47,7 +46,7 @@ router.post('/login', async(req, res) => {
 });
 
 router.get('/', async(req, res) => {
-  res.json({mensaje: 'Funciona!'})
+  res.json({response: 'It works!'})
 })
 
 module.exports = router;

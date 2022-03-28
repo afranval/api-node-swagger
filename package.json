@@ -1,6 +1,6 @@
 {
   "name": "edge-test-mevn",
-  "version": "1.2.4",
+  "version": "1.3.4",
   "description": "API with NodeJS",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/afranval/edge-test-mevn.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Abel Franco <abelmatiasf@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/afranval/edge-test-mevn/issues"
