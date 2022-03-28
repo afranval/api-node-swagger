@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+## [1.4.10] - 2022-03-27
+### Added
+- User add in swagger API
+## Modified
+- Updated README.md
+
 ## [1.3.10] - 2022-03-27
 ### Fixed
 - Remove package dev
