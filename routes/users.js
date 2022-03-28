@@ -12,7 +12,7 @@ const saltRounds = 10;
 // middleware
 const {AuthCheck} = require('../middlewares/authentication.js');
 
-router.post('/user', AuthCheck, async (req, res) => {
+router.post('/user', async (req, res) => {
 
   const body = {
     name: req.body.name,

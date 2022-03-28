@@ -1,9 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "1.1.0",
-        "title": "EDGE Test API",
-        "description": "EDGE Test project API",
+        "version": "1.1.1",
+        "title": "API Test",
+        "description": "API with NodeJS and Swagger",
         "license": {
             "name": "MIT",
             "url": "https://opensource.org/licenses/MIT"
@@ -25,8 +25,8 @@
     ],
     "tags": [
         {
-            "name":"Auth",
-            "description":"API Manage Auth"
+            "name":"Users",
+            "description":"API Manage Users and Auth"
         },
         {
             "name":"Notes",
@@ -37,7 +37,7 @@
         "/login/":{
             "post":{
                 "summary": "Login method",
-                "tags": ["Auth"],
+                "tags": ["Users"],
                 "parameters": [
                     {
                         "in": "body",
@@ -46,6 +46,37 @@
                         "required": false,
                         "schema": {
                             "$ref": "#/definitions/Auth"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description": "OK (successfully login)"
+                    },
+                    "401":{
+                        "description": "Unauthorized"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500":{
+                        "description": "Internal Server Error"
+                    }
+                }
+            }        
+        },
+        "/user/":{
+            "post":{
+                "summary": "User create method",
+                "tags": ["Users"],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "User object",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/User"
                         }
                     }
                 ],
@@ -126,7 +157,7 @@
                         "description": "Notes object",
                         "required": false,
                         "schema": {
-                            "$ref": "#/definitions/Notes"
+                            "$ref": "#/definitions/Note"
                         }
                     }
                 ],
@@ -221,7 +252,7 @@
                         "description": "Notes object",
                         "required": false,
                         "schema": {
-                            "$ref": "#/definitions/Notes"
+                            "$ref": "#/definitions/Note"
                         }
                     }
                 ],
@@ -301,7 +332,32 @@
                 }
             }
         },
-        "Notes": {
+        "User": {
+            "required": [
+                "name",
+                "email",
+                "pass",
+                "active"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "User Test"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "test@test.com"
+                },
+                "pass": {
+                    "type": "string",
+                    "example": "test"
+                },
+                "active": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "Note": {
             "required": [
               "name"
             ],
