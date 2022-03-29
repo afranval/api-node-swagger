@@ -18,6 +18,7 @@ PORT=port
 DB_USER=user_mongocloud
 DB_PASS=pass_mongocloud
 DB_NAME=db_mongocloud
+DB_HOST=host_mongocloud
 ```
 
 ## Commads for run app

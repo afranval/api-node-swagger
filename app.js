@@ -11,13 +11,16 @@ swaggerDocument = require('./swagger.json');
 // Conexión base de datos
 const mongoose = require('mongoose');
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.rc7qz.mongodb.net/${process.env.DB_NAME}`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`;
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 
 // Or using promises
 mongoose.connect(uri, options).then(
   /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
-  () => { console.log('Conectado a DB') },
+  () => { 
+    console.log('MongoDB successfully connected');
+    console.log(`Go to ---> http://localhost:${app.get('port')}/api-docs`);
+  },
   /** handle initial connection error */
   err => { console.log(err) }
 );
