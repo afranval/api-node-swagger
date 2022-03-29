@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+## [1.5.13] - 2022-03-29
+
+### Modified
+- Modified README.md
+- Modified package version
+- Modified output print on APP getting up
+- Modified app conexion DB with DB_HOST environment use
+
 ## [1.5.12] - 2022-03-28
 
 ### Added
